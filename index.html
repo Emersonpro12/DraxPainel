@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Drax Team</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:linear-gradient(135deg,#001d4a,#006eff);
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+}
+
+.box{
+    width:340px;
+    background:rgba(255,255,255,0.1);
+    padding:20px;
+    border-radius:20px;
+    box-shadow:0 0 20px rgba(0,0,0,.4);
+}
+
+h1{
+    text-align:center;
+}
+
+#painel{
+    display:none;
+}
+
+input[type=password]{
+    width:100%;
+    padding:10px;
+    border:none;
+    border-radius:10px;
+    margin-bottom:10px;
+}
+
+input[type=range]{
+    width:100%;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:10px;
+    background:#009dff;
+    color:white;
+    margin-top:10px;
+    font-size:16px;
+}
+
+.item{
+    margin-top:15px;
+}
+</style>
+</head>
+<body>
+
+<div class="box" id="login">
+    <h1>Drax Team</h1>
+
+    <input type="password" id="senha" placeholder="Senha">
+
+    <button onclick="entrar()">Entrar</button>
+</div>
+
+<div class="box" id="painel">
+
+    <h1>Drax Team</h1>
+
+    <div class="item">
+        AimBot: <span id="aimbotText">50%</span>
+        <input type="range" min="0" max="100" value="50"
+        oninput="aimbotText.innerHTML=this.value+'%'">
+    </div>
+
+    <div class="item">
+        AimFov: <span id="aimfovText">50%</span>
+        <input type="range" min="0" max="100" value="50"
+        oninput="aimfovText.innerHTML=this.value+'%'">
+    </div>
+
+    <div class="item">
+        Calibrar: <span id="calibrarText">50%</span>
+        <input type="range" min="0" max="100" value="50"
+        oninput="calibrarText.innerHTML=this.value+'%'">
+    </div>
+
+    <div class="item">
+        <label>
+            <input type="checkbox">
+            UMP
+        </label>
+    </div>
+
+    <div class="item">
+        <label>
+            <input type="checkbox">
+            XM8
+        </label>
+    </div>
+
+    <button onclick="abrirFF()">
+        Abrir Free Fire
+    </button>
+
+    <button onclick="abrirFFMax()">
+        Abrir Free Fire MAX
+    </button>
+
+</div>
+
+<script>
+
+function entrar(){
+    if(document.getElementById("senha").value=="Drax"){
+        document.getElementById("login").style.display="none";
+        document.getElementById("painel").style.display="block";
+    }else{
+        alert("Senha incorreta");
+    }
+}
+
+function abrirFF(){
+    window.location.href =
+    "intent://#Intent;scheme=package;package=com.dts.freefireth;end";
+}
+
+function abrirFFMax(){
+    window.location.href =
+    "intent://#Intent;scheme=package;package=com.dts.freefiremax;end";
+}
+
+</script>
+
+</body>
+</html>
