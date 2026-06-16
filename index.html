@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Drax Team</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#0f1117;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+}
+
+.painel{
+    width:420px;
+    background:#1b1f2a;
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 0 25px rgba(0,255,255,.25);
+    color:white;
+}
+
+.logo{
+    text-align:center;
+    font-size:30px;
+    font-weight:bold;
+    color:#00e5ff;
+    margin-bottom:20px;
+}
+
+.opcao{
+    margin-bottom:20px;
+}
+
+.opcao label{
+    display:block;
+    margin-bottom:8px;
+    font-weight:bold;
+}
+
+.valor{
+    color:#00e5ff;
+    font-weight:bold;
+}
+
+input[type="range"]{
+    width:100%;
+}
+
+.switch{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+input[type="checkbox"]{
+    width:22px;
+    height:22px;
+}
+
+.botoes{
+    display:flex;
+    gap:10px;
+    margin-top:15px;
+}
+
+button{
+    flex:1;
+    padding:12px;
+    border:none;
+    border-radius:10px;
+    background:#00e5ff;
+    color:black;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.2s;
+}
+
+button:hover{
+    transform:scale(1.03);
+}
+</style>
+</head>
+<body>
+
+<div class="painel">
+
+    <div class="logo">Drax Team</div>
+
+    <div class="opcao">
+        <label>
+            AimBot:
+            <span id="aimbotValor" class="valor">50%</span>
+        </label>
+        <input type="range" min="0" max="100" value="50"
+        oninput="aimbotValor.innerText=this.value+'%'">
+    </div>
+
+    <div class="opcao">
+        <label>
+            AimFov:
+            <span id="aimfovValor" class="valor">50%</span>
+        </label>
+        <input type="range" min="0" max="100" value="50"
+        oninput="aimfovValor.innerText=this.value+'%'">
+    </div>
+
+    <div class="opcao">
+        <label>
+            Calibrar:
+            <span id="calibrarValor" class="valor">50%</span>
+        </label>
+        <input type="range" min="0" max="100" value="50"
+        oninput="calibrarValor.innerText=this.value+'%'">
+    </div>
+
+    <div class="opcao switch">
+        <label>UMP</label>
+        <input type="checkbox">
+    </div>
+
+    <div class="opcao switch">
+        <label>XM8</label>
+        <input type="checkbox">
+    </div>
+
+    <div class="botoes">
+        <button onclick="abrirFF()">
+            Abrir Free Fire
+        </button>
+
+        <button onclick="abrirFFMax()">
+            Abrir Free Fire MAX
+        </button>
+    </div>
+
+</div>
+
+<script>
+function abrirFF(){
+    alert("Abrir Free Fire Normal");
+}
+
+function abrirFFMax(){
+    alert("Abrir Free Fire MAX");
+}
+</script>
+
+</body>
+</html>
